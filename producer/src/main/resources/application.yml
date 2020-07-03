@@ -1,0 +1,10 @@
+server:
+  port: 9091
+
+spring:
+  application:
+    name: producer-gateway
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 10.242.106.196:8848

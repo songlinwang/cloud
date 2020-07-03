@@ -1,0 +1,23 @@
+server:
+  port: 9090
+
+spring:
+  application:
+    name: api-gateway
+  cloud:
+    gateway:
+      routes:
+      - id: url-proxy-1
+        uri: http://www.ityouknow.com
+        predicates:
+        - Path=/spring-cloud
+      - id: order_center
+        uri: https://www.baidu.com
+        predicates:
+        - Query=wsl
+      - id: producer-gateway
+        uri: lb://producer-gateway
+        predicates:
+        - Path=/hello
+    nacos:
+      server-addr: 10.242.106.196:8848
